@@ -13,9 +13,14 @@ function createsLoginForm() {
     passwordInput.id = 'passwordInput';
     passwordInput.placeholder = 'Lösenord';
 
+    const loginButton = document.createElement('button');
+    loginButton.textContent = 'Logga in';
+    loginButton.id = 'loginButton';
+
     root.appendChild(header);
     header.appendChild(usernameInput);
     header.appendChild(passwordInput);
+    header.appendChild(loginButton);
 
     //Så funktionen skickar tillbaka headern om funktionen används i koden.
     return header;
@@ -39,5 +44,5 @@ function errorPage(){
 }
 
 
-//loginPage();
-errorPage();
+loginPage();
+//errorPage();
