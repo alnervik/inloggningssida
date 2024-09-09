@@ -22,7 +22,6 @@ function createsLoginForm() {
     header.appendChild(passwordInput);
     header.appendChild(loginButton);
 
-    //Så funktionen skickar tillbaka headern om funktionen används i koden.
     return header;
 }
 
@@ -34,7 +33,6 @@ function loginPage() {
 
 //Återanvänder funktionen ovan för skapa loginformuläret.
 function errorPage(){
-    const body = document.querySelector('body');
     const loginForm = createsLoginForm();
     body.appendChild(loginForm);
     //Lägger sedan till felmeddelandet om användaren använder fel användarnamn/lösen.
@@ -43,6 +41,24 @@ function errorPage(){
     body.appendChild(wrongInputMessage);
 }
 
+function welcomePage() {
+    const header = document.createElement('header');
 
-loginPage();
+    const logoutButton = document.createElement('button');
+    logoutButton.textContent = 'Logga ut';
+    logoutButton.id = 'logoutButton';
+
+    const welcomeMessage = document.createElement('h1');
+    welcomeMessage.textContent = 'Välkommen till den tomma sidan! Sitt en stund och reflektera så kommer du snart att inse att den inte alls är tom.';
+    
+
+    root.appendChild(header);
+    header.appendChild(logoutButton);
+    root.appendChild(welcomeMessage);
+
+}
+
+
+//loginPage();
 //errorPage();
+welcomePage();
