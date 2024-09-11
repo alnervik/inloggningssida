@@ -65,6 +65,7 @@ function welcomePage() {
 }
 
 function navigateTo(page){
+    root.innerHTML = '';
     switch(page) {
         case 'login':
             loginPage();
