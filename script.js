@@ -59,6 +59,9 @@ function welcomePage() {
     header.appendChild(logoutButton);
     root.appendChild(welcomeMessage);
 
+    logoutButton.addEventListener('click', function() {
+        navigateTo('login');
+    });
 }
 
 function navigateTo(page){
