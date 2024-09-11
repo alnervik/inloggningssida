@@ -34,11 +34,10 @@ function loginPage() {
     body.appendChild(loginForm);
 }
 
-//Återanvänder funktionen ovan för skapa loginformuläret.
 function errorPage(){
     const loginForm = createsLoginForm();
     body.appendChild(loginForm);
-    //Lägger sedan till felmeddelandet om användaren använder fel användarnamn/lösen.
+
     const wrongInputMessage = document.createElement('h1');
     wrongInputMessage.textContent = 'Oj, du skrev in fel användarnamn eller lösenord. Försök igen!';
     body.appendChild(wrongInputMessage);
@@ -64,6 +63,17 @@ function welcomePage() {
     });
 }
 
+function verifyLogin() {
+    const submittedUsername = document.getElementById('usernameInput').value;
+    const submittedPassword = document.getElementById('passwordInput').value;
+
+    if (submittedUsername == username && submittedPassword == password) {
+        navigateTo('welcome');
+    }   else {
+        navigateTo('error');
+    }
+}
+
 function navigateTo(page){
     root.innerHTML = '';
     switch(page) {
@@ -82,4 +92,4 @@ function navigateTo(page){
 }
 
 
-navigateTo('welcome');
+navigateTo('login');
