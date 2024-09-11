@@ -2,9 +2,8 @@ const username = 'test';
 const password = '1234';
 
 const root = document.getElementById("root");
-const body = document.querySelector('body');
+//const body = document.querySelector('body');
 
-//Skapar funktion för att kunna återanvända element på flera sidor (loginPage+errorPage)
 function createsLoginForm() {
     const header = document.createElement('header');
 
@@ -20,7 +19,7 @@ function createsLoginForm() {
     loginButton.textContent = 'Logga in';
     loginButton.id = 'loginButton';
 
-    root.appendChild(header);
+    //root.appendChild(header);
     header.appendChild(usernameInput);
     header.appendChild(passwordInput);
     header.appendChild(loginButton);
@@ -29,24 +28,27 @@ function createsLoginForm() {
 }
 
 function loginPage() {
-    const body = document.querySelector('body');
+    root.innerHTML = '';
+    //const root = document.querySelector('root');
     const loginForm = createsLoginForm();
-    body.appendChild(loginForm);
+    root.appendChild(loginForm);
 
     const loginButton = document.getElementById('loginButton');
     loginButton.addEventListener('click', verifyLogin);
 }
 
 function errorPage(){
+    root.innerHTML = '';
     const loginForm = createsLoginForm();
-    body.appendChild(loginForm);
+    root.appendChild(loginForm);
 
     const wrongInputMessage = document.createElement('h1');
     wrongInputMessage.textContent = 'Oj, du skrev in fel användarnamn eller lösenord. Försök igen!';
-    body.appendChild(wrongInputMessage);
+    root.appendChild(wrongInputMessage);
 }
 
 function welcomePage() {
+    root.innerHTML = '';
     const header = document.createElement('header');
 
     const logoutButton = document.createElement('button');
