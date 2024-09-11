@@ -18,7 +18,7 @@ G Krav
     
     ✅När jag är inloggad så skall inte inloggningsformuläret visas längre.
     
-    ✅Uppgiften skall lösas utan att använda location.reload() funktionen. Den motverkar vårt syfte här. Vi vill jobba med JavaScript, inte emot.
+    ✅Uppgiften skall lösas utan att använda location.rgeload() funktionen. Den motverkar vårt syfte här. Vi vill jobba med JavaScript, inte emot.
 
 VG Krav:
 
