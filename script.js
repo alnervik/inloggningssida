@@ -61,7 +61,21 @@ function welcomePage() {
 
 }
 
+function navigateTo(page){
+    switch(page) {
+        case 'login':
+            loginPage();
+            break;
+        case 'error':
+            errorPage();
+            break;
+        case 'welcome':
+            welcomePage();
+            break;
+        default:
+            loginPage();
+    }
+}
 
-//loginPage();
-errorPage();
-//welcomePage();
+
+navigateTo('welcome');
