@@ -2,7 +2,6 @@ const username = 'test';
 const password = '1234';
 
 const root = document.getElementById("root");
-//const body = document.querySelector('body');
 
 function createsLoginForm() {
     const header = document.createElement('header');
@@ -19,7 +18,6 @@ function createsLoginForm() {
     loginButton.textContent = 'Logga in';
     loginButton.id = 'loginButton';
 
-    //root.appendChild(header);
     header.appendChild(usernameInput);
     header.appendChild(passwordInput);
     header.appendChild(loginButton);
@@ -29,7 +27,6 @@ function createsLoginForm() {
 
 function loginPage() {
     root.innerHTML = '';
-    //const root = document.querySelector('root');
     const loginForm = createsLoginForm();
     root.appendChild(loginForm);
 
@@ -45,6 +42,9 @@ function errorPage(){
     const wrongInputMessage = document.createElement('h1');
     wrongInputMessage.textContent = 'Oj, du skrev in fel användarnamn eller lösenord. Försök igen!';
     root.appendChild(wrongInputMessage);
+
+    const loginButton = document.getElementById('loginButton');
+    loginButton.addEventListener('click', verifyLogin);
 }
 
 function welcomePage() {
