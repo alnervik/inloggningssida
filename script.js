@@ -1,3 +1,6 @@
+const username = 'test';
+const password = '1234';
+
 const root = document.getElementById("root");
 const body = document.querySelector('body');
 
@@ -60,5 +63,5 @@ function welcomePage() {
 
 
 //loginPage();
-//errorPage();
-welcomePage();
+errorPage();
+//welcomePage();
