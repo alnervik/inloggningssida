@@ -32,6 +32,9 @@ function loginPage() {
     const body = document.querySelector('body');
     const loginForm = createsLoginForm();
     body.appendChild(loginForm);
+
+    const loginButton = document.getElementById('loginButton');
+    loginButton.addEventListener('click', verifyLogin);
 }
 
 function errorPage(){
