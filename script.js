@@ -108,4 +108,4 @@ function navigateTo(page){
 }
 
 
-navigateTo('login');
+checkIfLoggedIn();
