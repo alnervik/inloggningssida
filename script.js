@@ -81,6 +81,13 @@ function verifyLogin() {
     }
 }
 
+function checkIfLoggedIn() {
+    if (localStorage.getItem('isUserLoggedIn') == 'yes') {
+        navigateTo('welcome');
+    } else {
+        navigateTo('login');
+    }
+}
 
 function navigateTo(page){
     root.innerHTML = '';
