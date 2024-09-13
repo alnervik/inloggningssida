@@ -64,6 +64,7 @@ function welcomePage() {
     root.appendChild(welcomeMessage);
 
     logoutButton.addEventListener('click', function() {
+        localStorage.removeItem('isUserLoggedIn');
         navigateTo('login');
     });
 }
@@ -73,14 +74,17 @@ function verifyLogin() {
     const submittedPassword = document.getElementById('passwordInput').value;
 
     if (submittedUsername == username && submittedPassword == password) {
+        localStorage.setItem('isUserLoggedIn', 'yes')
         navigateTo('welcome');
     }   else {
         navigateTo('error');
     }
 }
 
+
 function navigateTo(page){
     root.innerHTML = '';
+    
     switch(page) {
         case 'login':
             loginPage();
